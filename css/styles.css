@@ -1,0 +1,114 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Colors */
+:root {
+  --blue: #4DA8DA;
+  --yellow: #FFD93D;
+  --red: #FF6B6B;
+  --green: #6BCB77;
+  --white: #ffffff;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--blue);
+  color: #333;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: var(--white);
+}
+
+.header h1 {
+  font-size: 1.5rem;
+}
+
+.sound-btn {
+  font-size: 1.3rem;
+  border: none;
+  background: var(--yellow);
+  padding: 0.5rem 0.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Mascot */
+.mascot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 1rem;
+}
+
+.mascot img {
+  width: 120px;
+  animation: wave 2s infinite ease-in-out;
+}
+
+.speech {
+  background: var(--white);
+  padding: 1rem;
+  border-radius: 15px;
+  max-width: 220px;
+  font-size: 0.9rem;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: var(--white);
+}
+
+/* Animations */
+@keyframes wave {
+  0%, 100% { transform: rotate(0); }
+  50% { transform: rotate(5deg); }
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
