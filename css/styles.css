@@ -138,3 +138,28 @@ body {
 .letter-card:hover {
   transform: scale(1.08);
 }
+
+/* Number cards */
+.number-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+}
+
+.number-card:hover {
+  transform: scale(1.08);
+}
+
+.number-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.number-visual {
+  font-size: 1.4rem;
+}
