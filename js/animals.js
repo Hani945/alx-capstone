@@ -28,8 +28,11 @@ animals.forEach(animal => {
 
   // Click → speak animal name
   card.addEventListener("click", () => {
-    speakAnimal(animal.name);
-  });
+  speak(animal.name);
+  launchConfetti();
+});
+
+
 
   animalsContainer.appendChild(card);
 });

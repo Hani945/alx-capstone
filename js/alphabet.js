@@ -10,17 +10,14 @@ letters.forEach(letter => {
   card.textContent = letter;
 
   // Click → speak letter
-  card.addEventListener("click", () => {
-    speakLetter(letter);
-  });
+card.addEventListener("click", () => {
+  speak(letter);
+  launchConfetti();
+});
+
 
   alphabetContainer.appendChild(card);
 });
 
-// Speech function
-function speakLetter(letter) {
-  const speech = new SpeechSynthesisUtterance(letter);
-  speech.rate = 0.8;
-  speech.pitch = 1.2;
-  window.speechSynthesis.speak(speech);
-}
+
+

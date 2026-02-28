@@ -13,16 +13,18 @@ for (let i = 1; i <= 20; i++) {
   // Visual dots (🍎)
   const visual = document.createElement("div");
   visual.classList.add("number-visual");
-  visual.textContent = "🍎".repeat(i <= 10 ? i : 10); 
-  // cap at 10 to avoid overflow
+  visual.textContent = "🍎".repeat(i <= 20 ? i : 20); 
+  // cap at 20 to avoid overflow
 
   card.appendChild(numberValue);
   card.appendChild(visual);
 
   // Click → speak number
   card.addEventListener("click", () => {
-    speakNumber(i);
-  });
+  speak(i.toString());
+  launchConfetti();
+});
+
 
   numbersContainer.appendChild(card);
 }
