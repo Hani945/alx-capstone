@@ -53,15 +53,18 @@ function checkAnswer(selected) {
   if (selected === correctAnswer) {
     score++;
     scoreDisplay.textContent = "Score: " + score;
-    messageEl.textContent = "🎉 WOW! You got it!";
-    speak("Wow! You got it!", "excited");
-
-    speak("Great job");
+    messageEl.textContent = `🎉 WOW ${getKidName()}! You got it!`;
+    speak(`Amazing job ${getKidName()}!`, "excited");
     launchConfetti();
+    updateProgress(true);
+
 
     setTimeout(generateQuestion, 900);
   } else {
-    messageEl.textContent = "😊 Try again!";
-    speak("That's okay, try again!", "encourage");
+    messageEl.textContent = `😊 Almost, ${getKidName()}! Try again!`;
+
+    speak(`Almost ${getKidName()}. Try again!`);
+    updateProgress(false);
+
   }
 }
