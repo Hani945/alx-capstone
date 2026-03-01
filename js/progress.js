@@ -25,3 +25,7 @@ function getProgress() {
 }
 
 initProgress();
+function getKidName() {
+  return localStorage.getItem("activeKid") || "Super Star";
+}
+

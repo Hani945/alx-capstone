@@ -2,13 +2,14 @@ const animalsContainer = document.getElementById("animals-container");
 
 // Animal data
 const animals = [
-  { name: "Dog", image: "assets/images/dog.png" },
-  { name: "Cat", image: "assets/images/cat.png" },
-  { name: "Lion", image: "assets/images/lion.png" },
-  { name: "Elephant", image: "assets/images/elephant.png" },
-  { name: "Monkey", image: "assets/images/monkey.png" },
-  { name: "Cow", image: "assets/images/cow.png" }
+  { name: "Dog", image: "assets/images/dog.png", sound: "assets/sounds/dog.mp3" },
+  { name: "Cat", image: "assets/images/cat.png", sound: "assets/sounds/cat.mp3" },
+  { name: "Lion", image: "assets/images/lion.png", sound: "assets/sounds/lion.mp3" },
+  { name: "Elephant", image: "assets/images/elephant.png", sound: "assets/sounds/elephant.mp3" },
+  { name: "Monkey", image: "assets/images/monkey.png", sound: "assets/sounds/monkey.mp3" },
+  { name: "Cow", image: "assets/images/cow.png", sound: "assets/sounds/cow.mp3" }
 ];
+
 
 // Create animal cards
 animals.forEach(animal => {
@@ -28,8 +29,13 @@ animals.forEach(animal => {
 
   // Click → speak animal name
   card.addEventListener("click", () => {
-  speak(animal.name);
+  speak(animal.name, "excited");
   launchConfetti();
+
+  if (soundEnabled) {
+    const audio = new Audio(animal.sound);
+    audio.play();
+  }
 });
 
 
