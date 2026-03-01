@@ -3,6 +3,8 @@ const optionsContainer = document.getElementById("quiz-options");
 const playBtn = document.getElementById("play-sound");
 const messageEl = document.getElementById("quiz-message");
 const scoreDisplay = document.getElementById("score-display");
+const difficultySelect = document.getElementById("difficulty");
+
 
 let correctAnswer = "";
 let score = 0;
@@ -24,7 +26,10 @@ function generateQuestion() {
   // build options
   const options = new Set([correctAnswer]);
 
-  while (options.size < 4) {
+  const optionCount = parseInt(difficultySelect.value);
+
+while (options.size < optionCount)
+ {
     const randomLetter =
       letters[Math.floor(Math.random() * letters.length)];
     options.add(randomLetter);
@@ -48,13 +53,15 @@ function checkAnswer(selected) {
   if (selected === correctAnswer) {
     score++;
     scoreDisplay.textContent = "Score: " + score;
-    messageEl.textContent = "🎉 Correct! Great job!";
+    messageEl.textContent = "🎉 WOW! You got it!";
+    speak("Wow! You got it!", "excited");
+
     speak("Great job");
     launchConfetti();
 
     setTimeout(generateQuestion, 900);
   } else {
     messageEl.textContent = "😊 Try again!";
-    speak("Try again");
+    speak("That's okay, try again!", "encourage");
   }
 }
